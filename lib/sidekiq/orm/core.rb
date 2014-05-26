@@ -1,9 +1,17 @@
-require "sidekiq/orm/core/version"
+
+# dependencies
+require 'sidekiq'
+
+# core
+require 'sidekiq/orm/core/version'
 
 module Sidekiq
   module Orm
     module Core
-      # Your code goes here...
+      extend ActiveSupport::Autoload
+
+      autoload :TaskWorker
+      autoload :ManagerWorker
     end
   end
 end
